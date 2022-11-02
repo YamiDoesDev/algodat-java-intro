@@ -1,0 +1,932 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>04: Einführung in Objekte - Markdown Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="css/print-site.css">
+    
+      <link rel="stylesheet" href="css/print-site-material.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-einfuhrung-in-objekte" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Markdown Docs" class="md-header__button md-logo" aria-label="Markdown Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              04: Einführung in Objekte
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YamiDoesDev/algodat-java-intro" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Markdown Docs" class="md-nav__button md-logo" aria-label="Markdown Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Markdown Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YamiDoesDev/algodat-java-intro" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Crashkurs Java im Modul Algorithmen und Datenstrukturen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_hello_world.html" class="md-nav__link">
+        01: Hello World
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_basics.html" class="md-nav__link">
+        02: Basics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_coding_style.html" class="md-nav__link">
+        03: Coding Style
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04: Einführung in Objekte
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="04_introduction_to_objects.html" class="md-nav__link md-nav__link--active">
+        04: Einführung in Objekte
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kurze-begriffserklarung" class="md-nav__link">
+    Kurze Begriffserklärung
+  </a>
+  
+    <nav class="md-nav" aria-label="Kurze Begriffserklärung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    Declaration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiation" class="md-nav__link">
+    Instantiation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-einfache-objekte-und-veerbung" class="md-nav__link">
+    #1 Einfache Objekte und Veerbung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-komplexere-vererbung-von-klassen" class="md-nav__link">
+    #2 komplexere Vererbung von Klassen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-static-in-einer-klasse" class="md-nav__link">
+    #3 static in einer Klasse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_types_of_objects.html" class="md-nav__link">
+        05: Typen von Objekten
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_java_docs.html" class="md-nav__link">
+        06: JavaDoc
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="print_page.html" class="md-nav__link">
+        Print as PDF
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kurze-begriffserklarung" class="md-nav__link">
+    Kurze Begriffserklärung
+  </a>
+  
+    <nav class="md-nav" aria-label="Kurze Begriffserklärung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    Declaration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiation" class="md-nav__link">
+    Instantiation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-einfache-objekte-und-veerbung" class="md-nav__link">
+    #1 Einfache Objekte und Veerbung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-komplexere-vererbung-von-klassen" class="md-nav__link">
+    #2 komplexere Vererbung von Klassen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-static-in-einer-klasse" class="md-nav__link">
+    #3 static in einer Klasse
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+  <a href="https://github.com/YamiDoesDev/algodat-java-intro/edit/main/docs/04_introduction_to_objects.md" title="Seite editieren" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="04-einfuhrung-in-objekte">04: Einführung in Objekte</h1>
+<h2 id="kurze-begriffserklarung">Kurze Begriffserklärung</h2>
+<p>Quelle: <a href="https://stackhowto.com/difference-between-instantiating-declaring-and-initializing/">stackhowto.com</a></p>
+<h3 id="declaration">Declaration</h3>
+<blockquote>
+<p>Declaring a variable means the first “mention” of the variable, which tells the compiler “Hello, I am here and can be used”. 
+In a statically typed language like Java, this also means that the declared type of the variable is determined. 
+The value itself is not determined during the declaration.
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nbr</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></p>
+</blockquote>
+<h3 id="initialization">Initialization</h3>
+<blockquote>
+<p>The term initialization usually means the first assignment of a value to a variable.
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Thomas&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nbr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></p>
+</blockquote>
+<h3 id="instantiation">Instantiation</h3>
+<blockquote>
+<p>The term instantiation actually has nothing to do with assigning a value to a variable, even if a new object is sometimes instantiated when a variable is initialized.
+The term simply means the creation of a new object, i.e. an instance, from a class.
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;Thomas&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></p>
+</blockquote>
+<h2 id="1-einfache-objekte-und-veerbung">#1 Einfache Objekte und Veerbung</h2>
+<p><strong>Lernziele:</strong>
+* eine Klasse erzeugen 
+* eine Klasse aufrufen
+* einfache Veerbung
+* Polymorphie (Überschreiben von Methoden)
+* die Verwendung von <code>this</code>
+* die Verwendung von <code>super</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Animal</span><span class="w"> </span><span class="n">myAnimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animal</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myAnimal</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">myDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myDog</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Cat</span><span class="w"> </span><span class="n">myCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cat</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myCat</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">myCat</span><span class="p">.</span><span class="na">compareToAnimal</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Animal.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isPet</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Animal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Animal&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// it doesn&#39;t exist for our cats or dogs</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Yes, animal usually make sounds&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Cat.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cat</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Cat&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;meow meow&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">compareToAnimal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- Animal ---&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;is alive: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">isPet</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- Cat ---&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;is alive: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dog.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Dog&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">makeSound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;woof woof&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">compareToAnimal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- Animal ---&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;is alive: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">isPet</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- Cat ---&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">makeSound</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;is alive: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">isPet</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="2-komplexere-vererbung-von-klassen">#2 komplexere Vererbung von Klassen</h2>
+<p><strong>Lernziele:</strong>
+* Erweiterte Veerbung
+* Modifikatoren für Attribute
+* Getter und Setter
+* Konstruktorverkettung</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Vehicle</span><span class="w"> </span><span class="n">myVehicle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vehicle</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-- myVehicle:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;number of wheels: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myVehicle</span><span class="p">.</span><span class="na">getNumberOfWheels</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;max Speed: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myVehicle</span><span class="p">.</span><span class="na">getMaxSpeed</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">myVehicle</span><span class="p">.</span><span class="na">setMaxSpeed</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;max Speed: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myVehicle</span><span class="p">.</span><span class="na">getMaxSpeed</span><span class="p">());</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">myCar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-- myCar:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;number of wheels: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myCar</span><span class="p">.</span><span class="na">getNumberOfWheels</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;max Speed: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myCar</span><span class="p">.</span><span class="na">getMaxSpeed</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="n">myVehicle</span><span class="p">.</span><span class="na">setMaxSpeed</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;max Speed: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myCar</span><span class="p">.</span><span class="na">getMaxSpeed</span><span class="p">());</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehicle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfWheels</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSpeed</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Vehicle</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in default constructor of Vehicle&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numberOfWheels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Vehicle</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfWheels</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSpeed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Vehicle&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numberOfWheels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numberOfWheels</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maxSpeed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumberOfWheels</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">numberOfWheels</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMaxSpeed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">printMaxSpeed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; km/h&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxSpeed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newMaxSpeed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// always needs to be the first statement</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Car&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxSpeed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newMaxSpeed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No car shall be this slow tbh&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// always needs to be the first statement</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Car&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxSpeed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">newMaxSpeed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;No car shall be this slow tbh&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newMaxSpeed</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Truck</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehicle</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isFireTruck</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">hornSound</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Truck</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">isFireTruck</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w"> </span><span class="c1">// always needs to be the first statement</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;## in constructor of Truck&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">isFireTruck</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">isFireTruck</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">hornSound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">getIsFireTruck</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">isFireTruck</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="3-static-in-einer-klasse">#3 <code>static</code> in einer Klasse</h2>
+<p><strong>Lernziele:</strong>
+* statische und dynamische Variablen
+* statische und dynamische Methoden</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// main.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Counter</span><span class="p">.</span><span class="na">printCounterStatic</span><span class="p">(</span><span class="s">&quot;Static&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">Counter</span><span class="p">.</span><span class="na">increaseCounterStatic</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">Counter</span><span class="p">.</span><span class="na">printCounterStatic</span><span class="p">(</span><span class="s">&quot;Static&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Counter</span><span class="w"> </span><span class="n">myCounter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Counter</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">Counter</span><span class="p">.</span><span class="na">increaseCounterStatic</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myCounter</span><span class="p">.</span><span class="na">increaseCounterDynamic</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myCounter</span><span class="p">.</span><span class="na">printCounterDynamic</span><span class="p">(</span><span class="s">&quot;Dynamic&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Counter</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counterValueStatic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">counterValueDynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">increaseCounterStatic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">counterValueStatic</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">increaseCounterDynamic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">counterValueDynamic</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printCounterDynamic</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">classID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&gt;&gt; execute printCounterDynamic of class &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">classID</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;static: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counterValueStatic</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;dynamic: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">counterValueDynamic</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printCounterStatic</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">classID</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;&gt;&gt; execute printCounterStatic of class &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">classID</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;dynamic: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">counterValueStatic</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Letztes Update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 20:46:05</span>
+      
+        <br>
+        Erstellt:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 20:46:05</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:yamidoesdev@gmail.com'>YamiDoesDev</a></span>
+      </small>
+    </div>
+  
+
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="03_coding_style.html" class="md-footer__link md-footer__link--prev" aria-label="Zurück: 03: Coding Style" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              03: Coding Style
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="05_types_of_objects.html" class="md-footer__link md-footer__link--next" aria-label="Weiter: 05: Typen von Objekten" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              05: Typen von Objekten
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+<script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}}</script>
+    
+
+<script src="https://unpkg.com/iframe-worker/polyfill"></script>
+<script src="search/search_index.js"></script>
+
+
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="js/print-site.js"></script>
+      
+        <script src="js/arithmatex.config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

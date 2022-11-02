@@ -1,0 +1,1460 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>02: Basics - Markdown Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="css/print-site.css">
+    
+      <link rel="stylesheet" href="css/print-site-material.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02-basics" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Markdown Docs" class="md-header__button md-logo" aria-label="Markdown Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Markdown Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02: Basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Zurücksetzen" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YamiDoesDev/algodat-java-intro" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Markdown Docs" class="md-nav__button md-logo" aria-label="Markdown Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Markdown Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YamiDoesDev/algodat-java-intro" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Crashkurs Java im Modul Algorithmen und Datenstrukturen
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_hello_world.html" class="md-nav__link">
+        01: Hello World
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          02: Basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="02_basics.html" class="md-nav__link md-nav__link--active">
+        02: Basics
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-der-konsole" class="md-nav__link">
+    Nutzung der Konsole
+  </a>
+  
+    <nav class="md-nav" aria-label="Nutzung der Konsole">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe" class="md-nav__link">
+    Ausgabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eingabe" class="md-nav__link">
+    Eingabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-datentypen" class="md-nav__link">
+    Primitive Datentypen
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive Datentypen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-casting" class="md-nav__link">
+    Type Casting
+  </a>
+  
+    <nav class="md-nav" aria-label="Type Casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widening-casting-automatically" class="md-nav__link">
+    Widening Casting (automatically)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrowing-casting-manually" class="md-nav__link">
+    Narrowing Casting (manually)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nicht-primitive-datentypen" class="md-nav__link">
+    Nicht Primitive Datentypen
+  </a>
+  
+    <nav class="md-nav" aria-label="Nicht Primitive Datentypen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-datatypes" class="md-nav__link">
+    Numeric Datatypes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatoren" class="md-nav__link">
+    Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    Arithmetic Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-operators" class="md-nav__link">
+    Comparison Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedingungen" class="md-nav__link">
+    Bedingungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Bedingungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-condition-better-version" class="md-nav__link">
+    if-condition (better version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-condition-worse-version" class="md-nav__link">
+    if-condition (worse version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-condition" class="md-nav__link">
+    if-else-condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    switch-case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schleifen" class="md-nav__link">
+    Schleifen
+  </a>
+  
+    <nav class="md-nav" aria-label="Schleifen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#while-loop" class="md-nav__link">
+    while-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while-loop" class="md-nav__link">
+    do-while-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loop" class="md-nav__link">
+    for-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-ausfuhrung" class="md-nav__link">
+    Beispiel Ausführung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hinweis" class="md-nav__link">
+    Hinweis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-loop" class="md-nav__link">
+    for-each-loop
+  </a>
+  
+    <nav class="md-nav" aria-label="for-each-loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays_1" class="md-nav__link">
+    arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    lists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_coding_style.html" class="md-nav__link">
+        03: Coding Style
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_introduction_to_objects.html" class="md-nav__link">
+        04: Einführung in Objekte
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_types_of_objects.html" class="md-nav__link">
+        05: Typen von Objekten
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_java_docs.html" class="md-nav__link">
+        06: JavaDoc
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="print_page.html" class="md-nav__link">
+        Print as PDF
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-der-konsole" class="md-nav__link">
+    Nutzung der Konsole
+  </a>
+  
+    <nav class="md-nav" aria-label="Nutzung der Konsole">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ausgabe" class="md-nav__link">
+    Ausgabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eingabe" class="md-nav__link">
+    Eingabe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primitive-datentypen" class="md-nav__link">
+    Primitive Datentypen
+  </a>
+  
+    <nav class="md-nav" aria-label="Primitive Datentypen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-casting" class="md-nav__link">
+    Type Casting
+  </a>
+  
+    <nav class="md-nav" aria-label="Type Casting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#widening-casting-automatically" class="md-nav__link">
+    Widening Casting (automatically)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#narrowing-casting-manually" class="md-nav__link">
+    Narrowing Casting (manually)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nicht-primitive-datentypen" class="md-nav__link">
+    Nicht Primitive Datentypen
+  </a>
+  
+    <nav class="md-nav" aria-label="Nicht Primitive Datentypen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    String
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numeric-datatypes" class="md-nav__link">
+    Numeric Datatypes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatoren" class="md-nav__link">
+    Operatoren
+  </a>
+  
+    <nav class="md-nav" aria-label="Operatoren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    Arithmetic Operators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-operators" class="md-nav__link">
+    Comparison Operators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedingungen" class="md-nav__link">
+    Bedingungen
+  </a>
+  
+    <nav class="md-nav" aria-label="Bedingungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-condition-better-version" class="md-nav__link">
+    if-condition (better version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-condition-worse-version" class="md-nav__link">
+    if-condition (worse version)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-else-condition" class="md-nav__link">
+    if-else-condition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-case" class="md-nav__link">
+    switch-case
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schleifen" class="md-nav__link">
+    Schleifen
+  </a>
+  
+    <nav class="md-nav" aria-label="Schleifen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#while-loop" class="md-nav__link">
+    while-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-while-loop" class="md-nav__link">
+    do-while-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loop" class="md-nav__link">
+    for-loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-ausfuhrung" class="md-nav__link">
+    Beispiel Ausführung
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hinweis" class="md-nav__link">
+    Hinweis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-loop" class="md-nav__link">
+    for-each-loop
+  </a>
+  
+    <nav class="md-nav" aria-label="for-each-loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arrays_1" class="md-nav__link">
+    arrays
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    lists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    maps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+  <a href="https://github.com/YamiDoesDev/algodat-java-intro/edit/main/docs/02_basics.md" title="Seite editieren" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="02-basics">02: Basics</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#nutzung-der-konsole">Nutzung der Konsole</a></li>
+<li><a href="#primitive-datentypen">Primitive Datentypen</a></li>
+<li><a href="#">Nicht Primitive Datentypen</a></li>
+<li><a href="#">Operatoren</a></li>
+<li><a href="#">Bedingungen</a></li>
+<li><a href="#">Schleifen</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+</ol>
+<h2 id="nutzung-der-konsole">Nutzung der Konsole</h2>
+<h3 id="ausgabe">Ausgabe</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;print me and create a new line&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// prints nothing but creates new line afterwards</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;print me without a new line | &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;print me but add a new line \n&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;yeah, this is on the new line! \n&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w"> </span><span class="c1">// prints nothing but creates new line afterwards</span><span class="w"></span>
+
+<span class="c1">// https://www.digitalocean.com/community/tutorials/java-printf-method</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%s %s \n&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;parameter 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;parameter 2&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%s %e %f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;10.50&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10.50</span><span class="p">,</span><span class="w"> </span><span class="mf">10.50</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="eingabe">Eingabe</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// class and method : start</span><span class="w"></span>
+<span class="n">Scanner</span><span class="w"> </span><span class="n">myScanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter Username: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myScanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter Password: &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myScanner</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;your Username: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\nyour password: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="c1">// class and method : end</span><span class="w"></span>
+</code></pre></div>
+<h2 id="primitive-datentypen">Primitive Datentypen</h2>
+<p>Quelle: <a href="https://www.w3schools.com/java/java_data_types.asp">w3schools.com</a></p>
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Size</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1 byte</td>
+<td>Stores whole numbers from -128 to 127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2 bytes</td>
+<td>Stores whole numbers from -32,768 to 32,767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4 bytes</td>
+<td>Stores whole numbers from -2,147,483,648 to 2,147,483,647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8 bytes</td>
+<td>Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 bytes</td>
+<td>Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 bytes</td>
+<td>Stores fractional numbers. Sufficient for storing 15 decimal digits</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>1 bit</td>
+<td>Stores true or false values</td>
+</tr>
+<tr>
+<td>char</td>
+<td>2 bytes</td>
+<td>Stores a single character/letter or ASCII values</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-casting">Type Casting</h3>
+<p>Bei Type Casting handelt es sich um das überführen eines primitiven Datentypen 
+in einen anderen.</p>
+<p>Quelle: <a href="https://www.w3schools.com/java/java_type_casting.asp">w3schools.com</a></p>
+<h4 id="widening-casting-automatically">Widening Casting (automatically)</h4>
+<p>Hier wird ein kleinerer Typ in einen größeren Typ konvertiert</p>
+<p><code>byte</code> -&gt; <code>short</code> -&gt; <code>char</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code></p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">myInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"></span>
+<span class="kt">double</span><span class="w"> </span><span class="n">myDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myInt</span><span class="p">;</span><span class="w"> </span><span class="c1">// Automatic casting: int to double</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInt</span><span class="p">);</span><span class="w">      </span><span class="c1">// Outputs 9</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myDouble</span><span class="p">);</span><span class="w">   </span><span class="c1">// Outputs 9.0</span><span class="w"></span>
+</code></pre></div>
+<h4 id="narrowing-casting-manually">Narrowing Casting (manually)</h4>
+<p>Hier wird ein größerer Typ in einen kleineren Typ konvertiert</p>
+<p><code>double</code> -&gt; <code>float</code> -&gt; <code>long</code> -&gt; <code>int</code> -&gt; <code>char</code> -&gt; <code>short</code> -&gt; <code>byte</code></p>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">myDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9.78d</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">myInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">myDouble</span><span class="p">;</span><span class="w"> </span><span class="c1">// Manual casting: double to int</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myDouble</span><span class="p">);</span><span class="w">   </span><span class="c1">// Outputs 9.78</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myInt</span><span class="p">);</span><span class="w">      </span><span class="c1">// Outputs 9</span><span class="w"></span>
+</code></pre></div>
+<h2 id="nicht-primitive-datentypen">Nicht Primitive Datentypen</h2>
+<h3 id="string">String</h3>
+<p>String ist eine Wrapperklasse, welche eine Zeichenkette aus einzelnen chars 
+zusammenbaut. In manchen Programmiersprachen (z.B. C++) ist ein String 
+vergleichbar mit einem char-Array.</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;this is a text&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;myString: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">myString</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">String</span><span class="w"> </span><span class="n">concatString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;concatString: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">concatString</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>Methoden der Standardbibliothek:
+<div class="highlight"><pre><span></span><code><span class="n">myString</span><span class="p">.</span><span class="na">charAt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the char value at the specified index.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">indexOf</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the index within this string of the first occurrence of the specified substring.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">substring</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a string that is a substring of this string.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">equals</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares this string to the specified object.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to lower case.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to upper case.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">contains</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if and only if this string contains the specified sequence of char values.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">();</span><span class="w"> </span><span class="c1">// Replaces each substring of this string that matches the given regular expression with the given replacement.</span><span class="w"></span>
+<span class="n">myString</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="numeric-datatypes">Numeric Datatypes</h3>
+<p>Im Gegensatz zu den primitiven Datentypen werden hier "Wrapper" verwendet, um
+dynamisch mit den Werten arbeiten zu können. Das erlaubt auch die Erweiterung
+um verschiedene Methoden in der Standardbibliothek.</p>
+<p>Integer:
+<div class="highlight"><pre><span></span><code><span class="n">Integer</span><span class="w"> </span><span class="n">myNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Parses the string argument as a signed decimal integer.</span><span class="w"></span>
+<span class="n">Integer</span><span class="p">.</span><span class="na">parseUnsignedInt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Parses the string argument as an unsigned decimal integer.</span><span class="w"></span>
+<span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns an Integer object holding the value of the specified String.</span><span class="w"></span>
+</code></pre></div></p>
+<p>Float and Double:
+<div class="highlight"><pre><span></span><code><span class="n">Double</span><span class="w"> </span><span class="n">myDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">myDouble</span><span class="p">.</span><span class="na">isNaN</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if this Double value is a Not-a-Number (NaN), false otherwise.</span><span class="w"></span>
+
+<span class="n">Float</span><span class="w"> </span><span class="n">myFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="mf">10.0</span><span class="p">;</span><span class="w"></span>
+<span class="n">myFloat</span><span class="p">.</span><span class="na">isNaN</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if this Float value is a Not-a-Number (NaN), false otherwise</span><span class="w"></span>
+</code></pre></div></p>
+<p>Funktionen für alle Numerischen Datentypen (Nicht Primitiv):
+<div class="highlight"><pre><span></span><code><span class="n">myNumber</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two Integer objects numerically.</span><span class="w"></span>
+<span class="n">myNumber</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a String object representing this Integer&#39;s value.</span><span class="w"></span>
+<span class="n">myNumber</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as an int.</span><span class="w"></span>
+<span class="n">myNumber</span><span class="p">.</span><span class="na">floatValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a float after a widening primitive conversion.</span><span class="w"></span>
+<span class="n">myNumber</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a double after a widening primitive conversion.</span><span class="w"></span>
+<span class="n">myNumber</span><span class="p">.</span><span class="na">shortValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a short after a narrowing primitive conversion.</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="arrays">Arrays</h3>
+<p>Bei Arrays handelt es sich um Schleifen eines bestimmten Datentypen. Sie werden
+verwendet, um mehrere Werte in einer Variable zu speichern.</p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">myStringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="n">myStringArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ROT&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">myStringArray</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GRÜN&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="n">myStringArray</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BLAU&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">myIntArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myIntArray</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w"> </span><span class="c1">// 3</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">myIntArray</span><span class="p">));</span><span class="w"> </span><span class="c1">// [0,1,2]</span><span class="w"></span>
+</code></pre></div>
+<p>multidimensionale Arrays:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">my2DArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">},</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">my2DArray</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w"></span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">my2DArray</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">my2DArray</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">row</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;[&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">my2DArray</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">column</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">column</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">my2DArray</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">my2DArray</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">my2DArray</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">column</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;]&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>Methoden:
+<div class="highlight"><pre><span></span><code><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// a string representation of the object.</span><span class="w"></span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</span><span class="w"></span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Compares two int arrays lexicographically.</span><span class="w"></span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Returns true if the two specified arrays of ints are equal to one another.</span><span class="w"></span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sorts the specified array into ascending numerical order</span><span class="w"></span>
+<span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Assigns the specified int value to each element of the specified array of ints.</span><span class="w"></span>
+</code></pre></div></p>
+<h2 id="operatoren">Operatoren</h2>
+<h3 id="arithmetic-operators">Arithmetic Operators</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">calcAddition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 30</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">calcSubstraction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 10</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">calcMultiplication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 200</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">calcDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 2</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">calcModulus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 2</span><span class="w"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">myNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">myNumber</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// myNumber = 11</span><span class="w"></span>
+<span class="n">myNumber</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">// myNumber = 10</span><span class="w"></span>
+<span class="n">myNumber</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">// myNumber = 9</span><span class="w"></span>
+</code></pre></div>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">biggerNumberAgain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">smallerNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">// (20 == 20) =&gt; true</span><span class="w"></span>
+<span class="c1">// (20 != 20) =&gt; false</span><span class="w"></span>
+<span class="c1">// (20 &gt; 10) =&gt; true</span><span class="w"></span>
+<span class="c1">// (20 &lt; 10) =&gt; false</span><span class="w"></span>
+<span class="c1">// (20 &gt;= 10) =&gt; true</span><span class="w"></span>
+<span class="c1">// (20 &gt;= 10) =&gt; true</span><span class="w"></span>
+</code></pre></div>
+<h2 id="bedingungen">Bedingungen</h2>
+<p>wir verwenden folgende Variablen:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">biggerNumberAgain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">smallerNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="if-condition-better-version">if-condition (better version)</h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">smallerNumber</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;the left number is bigger!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="if-condition-worse-version">if-condition (worse version)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// prefer to not write it down like this!</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">biggerNumberAgain</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;We don&#39;t do this here...&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="if-else-condition">if-else-condition</h3>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">smallerNumber</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;the left number is smaller!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">biggerNumber</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">biggerNumberAgain</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;but this time, the left number is smaller!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;the left number is just too big!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="switch-case">switch-case</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">luckyNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">69</span><span class="p">;</span><span class="w"></span>
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">luckyNumber</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;some people consider 13 to be a lucky number&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// we need this to avoid default!</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;slot machines value this number high&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// we need this to avoid default!</span><span class="w"></span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;seems, your number was not lucky enough...&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="schleifen">Schleifen</h2>
+<h3 id="while-loop">while-loop</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">whileNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">whileNumber</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">whileNumber</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">whileNumber</span><span class="w"> </span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="do-while-loop">do-while-loop</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- doWhileNumber:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">doWhileNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">doWhileNumber</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">doWhileNumber</span><span class="o">--</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="n">doWhileNumber</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h3 id="for-loop">for-loop</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;--- forNumber:&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">iterator</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">iterator</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">iterator</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="beispiel-ausfuhrung">Beispiel Ausführung</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">myNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// count, how many times we can add 2 until we reach 16,</span><span class="w"></span>
+<span class="c1">// but we pretend, 13 doesn&#39;t exist for reasons</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">counter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">myNumber</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">myNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">counter</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">myNumber</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="hinweis">Hinweis</h3>
+<p>Vermeidet einfache Variablennamen wie i, u, usw.m um die Lesbarkeit einfach zu halten
+<div class="highlight"><pre><span></span><code><span class="c1">// </span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w"> </span><span class="n">u</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">myArray</span><span class="o">[</span><span class="n">u</span><span class="o">][</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<h3 id="for-each-loop">for-each-loop</h3>
+<h4 id="arrays_1">arrays</h4>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">myArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">selectedValue</span><span class="p">:</span><span class="w"> </span><span class="n">myArray</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;myArray: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">selectedValue</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">selectedValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">myArray</span><span class="p">));</span><span class="w"></span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">selection</span><span class="p">:</span><span class="w"> </span><span class="n">myArray</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h4 id="lists">lists</h4>
+<div class="highlight"><pre><span></span><code><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myLinkedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">myLinkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;List_1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">myLinkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;List_2&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">myLinkedList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;List_3&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">selectedValue</span><span class="p">:</span><span class="w"> </span><span class="n">myArray</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">selectedValue</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="maps">maps</h3>
+<div class="highlight"><pre><span></span><code><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myHashMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w"></span>
+<span class="n">myHashMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Larry&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">myHashMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Steve&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="n">myHashMap</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;James&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="n">myHashMap</span><span class="p">.</span><span class="na">forEach</span><span class="p">((</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+</code></pre></div>
+<h2 id="exceptions">Exceptions</h2>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// simple exception handling</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">myNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">myNumbers</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">exception</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;---&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">// extended exception handling</span><span class="w"></span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">myNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<span class="w">            </span><span class="n">printTenthIndex</span><span class="p">(</span><span class="n">myNumbers</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;class: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">exception</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span><span class="w"> </span><span class="c1">// class: class java.lang.RuntimeException</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cause: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">exception</span><span class="p">.</span><span class="na">getCause</span><span class="p">());</span><span class="w"> </span><span class="c1">// cause: java.lang.RuntimeException: array is not big enough</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;message: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">exception</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span><span class="w"> </span><span class="c1">// message: index was not found</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;finally! The &#39;try catch&#39; is finished.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">printTenthIndex</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">RuntimeException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">Exception</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;array is not big enough&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// not every exception supports causes</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;index was not found&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">array</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Letztes Update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 20:46:05</span>
+      
+        <br>
+        Erstellt:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 20:46:05</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:yamidoesdev@gmail.com'>YamiDoesDev</a></span>
+      </small>
+    </div>
+  
+
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="01_hello_world.html" class="md-footer__link md-footer__link--prev" aria-label="Zurück: 01: Hello World" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              01: Hello World
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="03_coding_style.html" class="md-footer__link md-footer__link--next" aria-label="Weiter: 03: Coding Style" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              03: Coding Style
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+<script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version.title": "Version ausw\u00e4hlen"}}</script>
+    
+
+<script src="https://unpkg.com/iframe-worker/polyfill"></script>
+<script src="search/search_index.js"></script>
+
+
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="js/print-site.js"></script>
+      
+        <script src="js/arithmatex.config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
