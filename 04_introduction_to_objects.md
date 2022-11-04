@@ -27,6 +27,26 @@ int nbr = 5;
 String name = new String("Thomas");
 ```
 
+## Modifier
+
+Quelle: [w3schools.com](https://www.w3schools.com/java/java_modifiers.asp)
+
+### Access-Modifier
+
+| Modifier  | Beschreibung                                                                                     |
+|-----------|--------------------------------------------------------------------------------------------------|
+| public    | The code is accessible for all classes                                                           |
+| private   | The code is only accessible within the declared class                                            |
+| protected | The code is accessible in the same package and subclasses.                                       |
+| default   | The code is only accessible in the same package. This is used when you don't specify a modifier. |
+
+### Non-Access-Modifier
+
+| Modifier | Beschreibung                                                                                                      |
+|----------|-------------------------------------------------------------------------------------------------------------------|
+| final    | The class cannot be inherited by other classes                                                                    |
+| abstract | The class cannot be used to create objects (To access an abstract class, it must be inherited from another class. |
+
 
 ## #1 Einfache Objekte und Veerbung
 **Lernziele:**

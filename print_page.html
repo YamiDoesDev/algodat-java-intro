@@ -588,10 +588,10 @@ Hello, World!
 <ol>
 <li><a href="#02_basics-nutzung-der-konsole">Nutzung der Konsole</a></li>
 <li><a href="#02_basics-primitive-datentypen">Primitive Datentypen</a></li>
-<li><a href="#02_basics-">Nicht Primitive Datentypen</a></li>
-<li><a href="#02_basics-">Operatoren</a></li>
-<li><a href="#02_basics-">Bedingungen</a></li>
-<li><a href="#02_basics-">Schleifen</a></li>
+<li><a href="#02_basics-nicht-primitive-datentypen">Nicht Primitive Datentypen</a></li>
+<li><a href="#02_basics-operatoren">Operatoren</a></li>
+<li><a href="#02_basics-bedingungen">Bedingungen</a></li>
+<li><a href="#02_basics-schleifen">Schleifen</a></li>
 <li><a href="#02_basics-exceptions">Exceptions</a></li>
 </ol>
 <h2 id="02_basics-nutzung-der-konsole">Nutzung der Konsole</h2>
@@ -706,17 +706,53 @@ vergleichbar mit einem char-Array.</p>
 <span class="n">String</span><span class="w"> </span><span class="n">concatString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;concatString: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">concatString</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-<p>Methoden der Standardbibliothek:
-<div class="highlight"><pre><span></span><code><span class="n">myString</span><span class="p">.</span><span class="na">charAt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the char value at the specified index.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">indexOf</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the index within this string of the first occurrence of the specified substring.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">substring</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a string that is a substring of this string.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">equals</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares this string to the specified object.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to lower case.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to upper case.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">contains</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if and only if this string contains the specified sequence of char values.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">();</span><span class="w"> </span><span class="c1">// Replaces each substring of this string that matches the given regular expression with the given replacement.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Methoden der Standardbibliothek:</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>myString.charAt()</td>
+<td>Returns the char value at the specified index.</td>
+</tr>
+<tr>
+<td>myString.indexOf()</td>
+<td>Returns the index within this string of the first occurrence of the specified substring.</td>
+</tr>
+<tr>
+<td>myString.substring()</td>
+<td>Returns a string that is a substring of this string.</td>
+</tr>
+<tr>
+<td>myString.equals()</td>
+<td>Compares this string to the specified object.</td>
+</tr>
+<tr>
+<td>myString.toLowerCase()</td>
+<td>Converts all of the characters in this String to lower case.</td>
+</tr>
+<tr>
+<td>myString.toUpperCase()</td>
+<td>Converts all of the characters in this String to upper case.</td>
+</tr>
+<tr>
+<td>myString.contains()</td>
+<td>Returns true if and only if this string contains the specified sequence of char values.</td>
+</tr>
+<tr>
+<td>myString.replaceAll()</td>
+<td>Replaces each substring of this string that matches the given regular expression with the given replacement.</td>
+</tr>
+<tr>
+<td>myString.compareTo()</td>
+<td>Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="02_basics-numeric-datatypes">Numeric Datatypes</h3>
 <p>Im Gegensatz zu den primitiven Datentypen werden hier "Wrapper" verwendet, um
 dynamisch mit den Werten arbeiten zu können. Das erlaubt auch die Erweiterung
@@ -734,14 +770,41 @@ um verschiedene Methoden in der Standardbibliothek.</p>
 <span class="n">Float</span><span class="w"> </span><span class="n">myFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="mf">10.0</span><span class="p">;</span><span class="w"></span>
 <span class="n">myFloat</span><span class="p">.</span><span class="na">isNaN</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if this Float value is a Not-a-Number (NaN), false otherwise</span><span class="w"></span>
 </code></pre></div></p>
-<p>Funktionen für alle Numerischen Datentypen (Nicht Primitiv):
-<div class="highlight"><pre><span></span><code><span class="n">myNumber</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two Integer objects numerically.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a String object representing this Integer&#39;s value.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as an int.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">floatValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a float after a widening primitive conversion.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a double after a widening primitive conversion.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">shortValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a short after a narrowing primitive conversion.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Funktionen für alle Numerischen Datentypen (Nicht Primitiv):</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>myNumber.compareTo()</td>
+<td>Compares two Integer objects numerically.</td>
+</tr>
+<tr>
+<td>myNumber.toString()</td>
+<td>Returns a String object representing this Integer's value.</td>
+</tr>
+<tr>
+<td>myNumber.intValue()</td>
+<td>Returns the value of this Integer as an int.</td>
+</tr>
+<tr>
+<td>myNumber.floatValue()</td>
+<td>Returns the value of this Integer as a float after a widening primitive conversion.</td>
+</tr>
+<tr>
+<td>myNumber.doubleValue()</td>
+<td>Returns the value of this Integer as a double after a widening primitive conversion.</td>
+</tr>
+<tr>
+<td>myNumber.shortValue()</td>
+<td>Returns the value of this Integer as a short after a narrowing primitive conversion.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="02_basics-arrays">Arrays</h3>
 <p>Bei Arrays handelt es sich um Schleifen eines bestimmten Datentypen. Sie werden
 verwendet, um mehrere Werte in einer Variable zu speichern.</p>
@@ -777,14 +840,41 @@ verwendet, um mehrere Werte in einer Variable zu speichern.</p>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;]&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<p>Methoden:
-<div class="highlight"><pre><span></span><code><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// a string representation of the object.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Compares two int arrays lexicographically.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Returns true if the two specified arrays of ints are equal to one another.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sorts the specified array into ascending numerical order</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Assigns the specified int value to each element of the specified array of ints.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Methoden:</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays.toString(Array a)</td>
+<td>a string representation of the object.</td>
+</tr>
+<tr>
+<td>Arrays.copyOf(Array a, int index)</td>
+<td>Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</td>
+</tr>
+<tr>
+<td>Arrays.compare(Array a, Array b)</td>
+<td>Compares two int arrays lexicographically.</td>
+</tr>
+<tr>
+<td>Arrays.equals(Array a, Array b)</td>
+<td>Returns true if the two specified arrays of ints are equal to one another.</td>
+</tr>
+<tr>
+<td>Arrays.sort(Array a)</td>
+<td>Sorts the specified array into ascending numerical order</td>
+</tr>
+<tr>
+<td>Arrays.fill(Array a, int number)</td>
+<td>Assigns the specified int value to each element of the specified array of ints.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="02_basics-operatoren">Operatoren</h2>
 <h3 id="02_basics-arithmetic-operators">Arithmetic Operators</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">calcAddition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 30</span><span class="w"></span>
@@ -1069,6 +1159,54 @@ The term simply means the creation of a new object, i.e. an instance, from a cla
 <div class="highlight"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&quot;Thomas&quot;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></p>
 </blockquote>
+<h2 id="04_introduction_to_objects-modifier">Modifier</h2>
+<p>Quelle: <a href="https://www.w3schools.com/java/java_modifiers.asp">w3schools.com</a></p>
+<h3 id="04_introduction_to_objects-access-modifier">Access-Modifier</h3>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>The code is accessible for all classes</td>
+</tr>
+<tr>
+<td>private</td>
+<td>The code is only accessible within the declared class</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>The code is accessible in the same package and subclasses.</td>
+</tr>
+<tr>
+<td>default</td>
+<td>The code is only accessible in the same package. This is used when you don't specify a modifier.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="04_introduction_to_objects-non-access-modifier">Non-Access-Modifier</h3>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>final</td>
+<td>The class cannot be inherited by other classes</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>The class cannot be used to create objects (To access an abstract class, it must be inherited from another class.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="04_introduction_to_objects-1-einfache-objekte-und-veerbung">#1 Einfache Objekte und Veerbung</h2>
 <p><strong>Lernziele:</strong>
 * eine Klasse erzeugen 
@@ -1373,52 +1511,14 @@ The term simply means the creation of a new object, i.e. an instance, from a cla
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<h3 id="05_types_of_objects-abstract-and-interface">Abstract and Interface</h3>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// Regex.java</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Regex</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">concatStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Main.java</span><span class="w"></span>
-<span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Language</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">showLanguage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This text is presented to you by Java&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHelloWorld</span><span class="p">();</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="c1">// Main.java</span><span class="w"></span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Regex</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// Language myLanguage = new Language();</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// &#39;Language&#39; is abstract; cannot be instantiated</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">Main</span><span class="w"> </span><span class="n">myObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Main</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">myObject</span><span class="p">.</span><span class="na">sayHelloWorld</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">wortwitz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myObject</span><span class="p">.</span><span class="na">concatStrings</span><span class="p">(</span><span class="s">&quot;du&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;schlampe&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wortwitz</span><span class="p">);</span><span class="w"> </span><span class="c1">// duschlampe</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHelloWorld</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I refuse to say that!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">concatStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// SaveState.java</span><span class="w"></span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.security.InvalidParameterException</span><span class="p">;</span><span class="w"></span>
 
 <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SaveState</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">SaveState</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">saveEntry</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">saveID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">staticSaveID</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">saveEntry</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">saveID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">staticSaveID</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// constructor</span><span class="w"></span>
 <span class="w">    </span><span class="n">SaveState</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">saveEntry</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">InvalidParameterException</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1460,6 +1560,44 @@ The term simply means the creation of a new object, i.e. an instance, from a cla
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="05_types_of_objects-abstract-and-interface">Abstract and Interface</h3>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// Regex.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Regex</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">concatStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Main.java</span><span class="w"></span>
+<span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Language</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">showLanguage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;This text is presented to you by Java&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHelloWorld</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Main.java</span><span class="w"></span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Regex</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Language myLanguage = new Language();</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// &#39;Language&#39; is abstract; cannot be instantiated</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">Main</span><span class="w"> </span><span class="n">myObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Main</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">myObject</span><span class="p">.</span><span class="na">sayHelloWorld</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">wortwitz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">myObject</span><span class="p">.</span><span class="na">concatStrings</span><span class="p">(</span><span class="s">&quot;du&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;schlampe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">wortwitz</span><span class="p">);</span><span class="w"> </span><span class="c1">// duschlampe</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sayHelloWorld</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I refuse to say that!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">concatStrings</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>

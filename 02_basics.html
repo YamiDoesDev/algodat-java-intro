@@ -965,10 +965,10 @@
 <ol>
 <li><a href="#nutzung-der-konsole">Nutzung der Konsole</a></li>
 <li><a href="#primitive-datentypen">Primitive Datentypen</a></li>
-<li><a href="#">Nicht Primitive Datentypen</a></li>
-<li><a href="#">Operatoren</a></li>
-<li><a href="#">Bedingungen</a></li>
-<li><a href="#">Schleifen</a></li>
+<li><a href="#nicht-primitive-datentypen">Nicht Primitive Datentypen</a></li>
+<li><a href="#operatoren">Operatoren</a></li>
+<li><a href="#bedingungen">Bedingungen</a></li>
+<li><a href="#schleifen">Schleifen</a></li>
 <li><a href="#exceptions">Exceptions</a></li>
 </ol>
 <h2 id="nutzung-der-konsole">Nutzung der Konsole</h2>
@@ -1083,17 +1083,53 @@ vergleichbar mit einem char-Array.</p>
 <span class="n">String</span><span class="w"> </span><span class="n">concatString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;concatString: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">concatString</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
-<p>Methoden der Standardbibliothek:
-<div class="highlight"><pre><span></span><code><span class="n">myString</span><span class="p">.</span><span class="na">charAt</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the char value at the specified index.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">indexOf</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the index within this string of the first occurrence of the specified substring.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">substring</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a string that is a substring of this string.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">equals</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares this string to the specified object.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to lower case.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">();</span><span class="w"> </span><span class="c1">// Converts all of the characters in this String to upper case.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">contains</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if and only if this string contains the specified sequence of char values.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">();</span><span class="w"> </span><span class="c1">// Replaces each substring of this string that matches the given regular expression with the given replacement.</span><span class="w"></span>
-<span class="n">myString</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Methoden der Standardbibliothek:</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>myString.charAt()</td>
+<td>Returns the char value at the specified index.</td>
+</tr>
+<tr>
+<td>myString.indexOf()</td>
+<td>Returns the index within this string of the first occurrence of the specified substring.</td>
+</tr>
+<tr>
+<td>myString.substring()</td>
+<td>Returns a string that is a substring of this string.</td>
+</tr>
+<tr>
+<td>myString.equals()</td>
+<td>Compares this string to the specified object.</td>
+</tr>
+<tr>
+<td>myString.toLowerCase()</td>
+<td>Converts all of the characters in this String to lower case.</td>
+</tr>
+<tr>
+<td>myString.toUpperCase()</td>
+<td>Converts all of the characters in this String to upper case.</td>
+</tr>
+<tr>
+<td>myString.contains()</td>
+<td>Returns true if and only if this string contains the specified sequence of char values.</td>
+</tr>
+<tr>
+<td>myString.replaceAll()</td>
+<td>Replaces each substring of this string that matches the given regular expression with the given replacement.</td>
+</tr>
+<tr>
+<td>myString.compareTo()</td>
+<td>Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="numeric-datatypes">Numeric Datatypes</h3>
 <p>Im Gegensatz zu den primitiven Datentypen werden hier "Wrapper" verwendet, um
 dynamisch mit den Werten arbeiten zu können. Das erlaubt auch die Erweiterung
@@ -1111,14 +1147,41 @@ um verschiedene Methoden in der Standardbibliothek.</p>
 <span class="n">Float</span><span class="w"> </span><span class="n">myFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="mf">10.0</span><span class="p">;</span><span class="w"></span>
 <span class="n">myFloat</span><span class="p">.</span><span class="na">isNaN</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns true if this Float value is a Not-a-Number (NaN), false otherwise</span><span class="w"></span>
 </code></pre></div></p>
-<p>Funktionen für alle Numerischen Datentypen (Nicht Primitiv):
-<div class="highlight"><pre><span></span><code><span class="n">myNumber</span><span class="p">.</span><span class="na">compareTo</span><span class="p">();</span><span class="w"> </span><span class="c1">// Compares two Integer objects numerically.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns a String object representing this Integer&#39;s value.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">intValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as an int.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">floatValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a float after a widening primitive conversion.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">doubleValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a double after a widening primitive conversion.</span><span class="w"></span>
-<span class="n">myNumber</span><span class="p">.</span><span class="na">shortValue</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the value of this Integer as a short after a narrowing primitive conversion.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Funktionen für alle Numerischen Datentypen (Nicht Primitiv):</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>myNumber.compareTo()</td>
+<td>Compares two Integer objects numerically.</td>
+</tr>
+<tr>
+<td>myNumber.toString()</td>
+<td>Returns a String object representing this Integer's value.</td>
+</tr>
+<tr>
+<td>myNumber.intValue()</td>
+<td>Returns the value of this Integer as an int.</td>
+</tr>
+<tr>
+<td>myNumber.floatValue()</td>
+<td>Returns the value of this Integer as a float after a widening primitive conversion.</td>
+</tr>
+<tr>
+<td>myNumber.doubleValue()</td>
+<td>Returns the value of this Integer as a double after a widening primitive conversion.</td>
+</tr>
+<tr>
+<td>myNumber.shortValue()</td>
+<td>Returns the value of this Integer as a short after a narrowing primitive conversion.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="arrays">Arrays</h3>
 <p>Bei Arrays handelt es sich um Schleifen eines bestimmten Datentypen. Sie werden
 verwendet, um mehrere Werte in einer Variable zu speichern.</p>
@@ -1154,14 +1217,41 @@ verwendet, um mehrere Werte in einer Variable zu speichern.</p>
 <span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;]&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<p>Methoden:
-<div class="highlight"><pre><span></span><code><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// a string representation of the object.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Compares two int arrays lexicographically.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Returns true if the two specified arrays of ints are equal to one another.</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">myArray</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sorts the specified array into ascending numerical order</span><span class="w"></span>
-<span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">myArray</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Assigns the specified int value to each element of the specified array of ints.</span><span class="w"></span>
-</code></pre></div></p>
+<p>Methoden:</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrays.toString(Array a)</td>
+<td>a string representation of the object.</td>
+</tr>
+<tr>
+<td>Arrays.copyOf(Array a, int index)</td>
+<td>Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.</td>
+</tr>
+<tr>
+<td>Arrays.compare(Array a, Array b)</td>
+<td>Compares two int arrays lexicographically.</td>
+</tr>
+<tr>
+<td>Arrays.equals(Array a, Array b)</td>
+<td>Returns true if the two specified arrays of ints are equal to one another.</td>
+</tr>
+<tr>
+<td>Arrays.sort(Array a)</td>
+<td>Sorts the specified array into ascending numerical order</td>
+</tr>
+<tr>
+<td>Arrays.fill(Array a, int number)</td>
+<td>Assigns the specified int value to each element of the specified array of ints.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="operatoren">Operatoren</h2>
 <h3 id="arithmetic-operators">Arithmetic Operators</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">calcAddition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// = 30</span><span class="w"></span>
@@ -1347,7 +1437,7 @@ verwendet, um mehrere Werte in einer Variable zu speichern.</p>
   <small>
     
       Letztes Update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 20:46:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 4, 2022 16:13:00</span>
       
         <br>
         Erstellt:
