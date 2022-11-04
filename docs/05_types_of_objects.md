@@ -65,55 +65,15 @@ public class Main /*extends Language implements Regex*/ {
 }
 ```
 
-### Abstract and Interface
-```java
-// Regex.java
-public interface Regex {
-    public String concatStrings(String left, String right);
-}
-```
-```java
-// Main.java
-abstract class Language {
-    public void showLanguage() {
-        System.out.println("This text is presented to you by Java");
-    }
-    public abstract void sayHelloWorld();
-}
-
-// Main.java
-public class Main extends Language implements Regex {
-    public static void main(String[] args) {
-        // Language myLanguage = new Language();
-        // 'Language' is abstract; cannot be instantiated
-
-        Main myObject = new Main();
-        myObject.sayHelloWorld();
-
-        String wortwitz = myObject.concatStrings("du", "schlampe");
-        System.out.println(wortwitz); // duschlampe
-    }
-
-    @Override
-    public void sayHelloWorld() {
-        System.out.println("I refuse to say that!");
-    }
-
-    @Override
-    public String concatStrings(String left, String right) {
-        return left + right;
-    }
-}
-```
 ```java
 // SaveState.java
 
 import java.security.InvalidParameterException;
 
 public class SaveState<T> implements Comparable<SaveState> {
-    private T saveEntry;
-    private int saveID = 0;
-    private static int staticSaveID;
+private T saveEntry;
+private int saveID = 0;
+private static int staticSaveID;
 
     // constructor
     SaveState(T saveEntry) throws InvalidParameterException {
@@ -155,6 +115,47 @@ public class SaveState<T> implements Comparable<SaveState> {
             return -1;
         }
         return 0;
+    }
+}
+```
+
+### Abstract and Interface
+```java
+// Regex.java
+public interface Regex {
+    public String concatStrings(String left, String right);
+}
+```
+```java
+// Main.java
+abstract class Language {
+    public void showLanguage() {
+        System.out.println("This text is presented to you by Java");
+    }
+    public abstract void sayHelloWorld();
+}
+
+// Main.java
+public class Main extends Language implements Regex {
+    public static void main(String[] args) {
+        // Language myLanguage = new Language();
+        // 'Language' is abstract; cannot be instantiated
+
+        Main myObject = new Main();
+        myObject.sayHelloWorld();
+
+        String wortwitz = myObject.concatStrings("du", "schlampe");
+        System.out.println(wortwitz); // duschlampe
+    }
+
+    @Override
+    public void sayHelloWorld() {
+        System.out.println("I refuse to say that!");
+    }
+
+    @Override
+    public String concatStrings(String left, String right) {
+        return left + right;
     }
 }
 ```

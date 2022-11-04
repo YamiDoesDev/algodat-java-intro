@@ -3,10 +3,10 @@
 ## Table of Contents
 1. [Nutzung der Konsole](#nutzung-der-konsole)
 2. [Primitive Datentypen](#primitive-datentypen)
-3. [Nicht Primitive Datentypen](#)
-4. [Operatoren](#)
-5. [Bedingungen](#)
-6. [Schleifen](#)
+3. [Nicht Primitive Datentypen](#nicht-primitive-datentypen)
+4. [Operatoren](#operatoren)
+5. [Bedingungen](#bedingungen)
+6. [Schleifen](#schleifen)
 7. [Exceptions](#exceptions)
 
 ## Nutzung der Konsole
@@ -108,17 +108,18 @@ System.out.println("concatString: " + concatString);
 ```
 
 Methoden der Standardbibliothek:
-```java
-myString.charAt(); // Returns the char value at the specified index.
-myString.indexOf(); // Returns the index within this string of the first occurrence of the specified substring.
-myString.substring(); // Returns a string that is a substring of this string.
-myString.equals(); // Compares this string to the specified object.
-myString.toLowerCase(); // Converts all of the characters in this String to lower case.
-myString.toUpperCase(); // Converts all of the characters in this String to upper case.
-myString.contains(); // Returns true if and only if this string contains the specified sequence of char values.
-myString.replaceAll(); // Replaces each substring of this string that matches the given regular expression with the given replacement.
-myString.compareTo(); // Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings.
-```
+
+| Methode                | Beschreibung                                                                                                            |
+|------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| myString.charAt()      | Returns the char value at the specified index.                                                                          |
+| myString.indexOf()     | Returns the index within this string of the first occurrence of the specified substring.                                |
+| myString.substring()   | Returns a string that is a substring of this string.                                                                    |
+| myString.equals()      | Compares this string to the specified object.                                                                           |
+| myString.toLowerCase() | Converts all of the characters in this String to lower case.                                                            |
+| myString.toUpperCase() | Converts all of the characters in this String to upper case.                                                            |
+| myString.contains()    | Returns true if and only if this string contains the specified sequence of char values.                                 |
+| myString.replaceAll()  | Replaces each substring of this string that matches the given regular expression with the given replacement.            |
+| myString.compareTo()   |  Compares two strings lexicographically. The comparison is based on the Unicode value of each character in the strings. |
 
 ### Numeric Datatypes
 
@@ -144,14 +145,16 @@ myFloat.isNaN(); // Returns true if this Float value is a Not-a-Number (NaN), fa
 ```
 
 Funktionen für alle Numerischen Datentypen (Nicht Primitiv):
-```java
-myNumber.compareTo(); // Compares two Integer objects numerically.
-myNumber.toString(); // Returns a String object representing this Integer's value.
-myNumber.intValue(); // Returns the value of this Integer as an int.
-myNumber.floatValue(); // Returns the value of this Integer as a float after a widening primitive conversion.
-myNumber.doubleValue(); // Returns the value of this Integer as a double after a widening primitive conversion.
-myNumber.shortValue(); // Returns the value of this Integer as a short after a narrowing primitive conversion.
-```
+
+| Methode                | Beschreibung                                                                          |
+|------------------------|---------------------------------------------------------------------------------------|
+| myNumber.compareTo()   | Compares two Integer objects numerically.                                             |
+| myNumber.toString()    | Returns a String object representing this Integer's value.                            |                              
+| myNumber.intValue()    | Returns the value of this Integer as an int.                                          |                                           
+| myNumber.floatValue()  | Returns the value of this Integer as a float after a widening primitive conversion.   |   
+| myNumber.doubleValue() | Returns the value of this Integer as a double after a widening primitive conversion.  |
+| myNumber.shortValue()  | Returns the value of this Integer as a short after a narrowing primitive conversion.  |  
+
 
 ### Arrays
 Bei Arrays handelt es sich um Schleifen eines bestimmten Datentypen. Sie werden
@@ -194,14 +197,15 @@ for(int row = 0; row < my2DArray.length; row++) {
 ```
 
 Methoden:
-```java
-Arrays.toString(myArray); // a string representation of the object.
-Arrays.copyOf(myArray, 3); // Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length.
-Arrays.compare(myArray, myArray); // Compares two int arrays lexicographically.
-Arrays.equals(myArray, myArray); // Returns true if the two specified arrays of ints are equal to one another.
-Arrays.sort(myArray); // Sorts the specified array into ascending numerical order
-Arrays.fill(myArray, 0); // Assigns the specified int value to each element of the specified array of ints.
-```
+
+| Methode                           | Beschreibung                                                                                                      |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Arrays.toString(Array a)          | a string representation of the object.                                                                            |                                                                           
+| Arrays.copyOf(Array a, int index) | Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length. | 
+| Arrays.compare(Array a, Array b)  | Compares two int arrays lexicographically.                                                                        |                                                                        
+| Arrays.equals(Array a, Array b)   | Returns true if the two specified arrays of ints are equal to one another.                                        |                                        
+| Arrays.sort(Array a)              | Sorts the specified array into ascending numerical order                                                          |                                                         
+| Arrays.fill(Array a, int number)  | Assigns the specified int value to each element of the specified array of ints.                                   |                                   
 
 ## Operatoren
 
